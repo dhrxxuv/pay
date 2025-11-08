@@ -1,16 +1,23 @@
-"use client"
+"use client";
 
-export const TextInput = ({
-    placeholder,
-    onChange,
-    label
-}: {
-    placeholder: string;
-    onChange: (value: string) => void;
-    label: string;
-}) => {
-    return <div className="pt-2">
-        <label className="block mb-2 text-sm font-medium text-gray-900">{label}</label>
-        <input onChange={(e) => onChange(e.target.value)} type="text" id="first_name" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder={placeholder} />
-    </div>
+interface TextInputProps {
+  label: string;
+  placeholder: string;
+  onChange: (value: string) => void;
 }
+
+export const TextInput = ({ label, placeholder, onChange }: TextInputProps) => {
+  return (
+    <div className="space-y-2">
+      <label className="block text-sm font-medium text-gray-300">
+        {label}
+      </label>
+      <input
+        type="text"
+        placeholder={placeholder}
+        onChange={(e) => onChange(e.target.value)}
+        className="bg-slate-800 border border-slate-700 text-white text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block w-full p-2.5 transition-all"
+      />
+    </div>
+  );
+};
