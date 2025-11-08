@@ -34,3 +34,15 @@ yarn-error.log*
 
 # ui
 dist/
+user-app/.env
+user-app/.envlocal
+merchant-app/.env
+merchant-app/.envlocal
+.env 
+packages/database/generated
+packages/database/node
+packages/database/prisma/migrations
+packages/database/.env
+
+
+
